@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ChecklistViewController: AddItemViewControllerDelegate {
+extension ChecklistViewController: ItemDetailViewControllerDelegate {
     
     
     //MARK:TableView number of row
@@ -39,7 +39,7 @@ extension ChecklistViewController: AddItemViewControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  "addItem" || segue.identifier == "editItem",
             let navcontroller = segue.destination as? UINavigationController,
-             let destination = navcontroller.topViewController as? AddItemViewController
+             let destination = navcontroller.topViewController as? ItemDetailViewController
         {
             destination.delegate = self
             if segue.identifier == "editItem" ,
@@ -51,17 +51,17 @@ extension ChecklistViewController: AddItemViewControllerDelegate {
         }
     }
     
-    func addItemViewControllerDidCancel(controller: AddItemViewController) {
+    func itemDetailViewControllerDidCancel(controller: ItemDetailViewController) {
         controller.dismiss(animated: true, completion: {})
     }
     
-    func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
+    func itemDetailViewController(controller: ItemDetailViewController, didFinishAddingItem item: ChecklistItem) {
         controller.dismiss(animated: true, completion: {})
         checklist.append(item)
         self.tableView.insertRows(at: [IndexPath(row: checklist.count - 1, section: 0)], with: .left)
     }
     
-    func addItemViewController(controller: AddItemViewController, didFinishEditingItem item: ChecklistItem) {
+    func itemDetailViewController(controller: ItemDetailViewController, didFinishEditingItem item: ChecklistItem) {
         controller.dismiss(animated: true, completion: {})
         if let index = checklist.index(where:{ $0 === item }) {
             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .left)

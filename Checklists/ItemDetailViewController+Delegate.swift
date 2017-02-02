@@ -1,5 +1,5 @@
 //
-//  AddItemViewController+Delegate.swift
+//  ItemDetailViewController+Delegate.swift
 //  Checklists
 //
 //  Created by iem on 02/02/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension AddItemViewController: UITextFieldDelegate {
+extension ItemDetailViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let str = textField.text?.characters {
             if !string.isEmpty || (str.count) > 1 {
