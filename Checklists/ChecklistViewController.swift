@@ -14,10 +14,7 @@ class ChecklistViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        checklist.append(ChecklistItem(txt: "blabalblsoijqozfhd"))
-        checklist.append(ChecklistItem(txt: "254512515311"))
-        checklist.append(ChecklistItem(txt: "qzdqzdqzdqzd"))
-        checklist.append(ChecklistItem(txt: "qazds5q1zd5eg454th5yj4"))
+        loadChecklistItems()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

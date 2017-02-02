@@ -59,12 +59,14 @@ extension ChecklistViewController: ItemDetailViewControllerDelegate {
         controller.dismiss(animated: true, completion: {})
         checklist.append(item)
         self.tableView.insertRows(at: [IndexPath(row: checklist.count - 1, section: 0)], with: .left)
+        saveChecklistItems()
     }
     
     func itemDetailViewController(controller: ItemDetailViewController, didFinishEditingItem item: ChecklistItem) {
         controller.dismiss(animated: true, completion: {})
         if let index = checklist.index(where:{ $0 === item }) {
             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .left)
+            saveChecklistItems()
         }
     }
 }
