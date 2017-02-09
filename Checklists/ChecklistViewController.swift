@@ -10,12 +10,17 @@ import UIKit
 
 class ChecklistViewController: UITableViewController {
     
-    var checklist = [ChecklistItem]()
-    //var list: Checklist?
+    //var checklist = [ChecklistItem]()
+    var list: Checklist!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if (self.list) == nil {
+            self.list = Checklist(txt: "Eror")
+            self.title = self.list.text
+        }else {
+            self.title = self.list.text
+        }
         //loadChecklistItems()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -25,10 +30,7 @@ class ChecklistViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    required init?(coder aDecoder: NSCoder){
-        super.init(coder: aDecoder)
-        //loadChecklistItems()
-    }
+    
 
     //MARK:configure field in cell
     func configureCheckmarkFor(cell: UITableViewCell, withItem item: ChecklistItem){
@@ -46,12 +48,6 @@ class ChecklistViewController: UITableViewController {
         }
     }
     
-    /*@IBAction func addDummyTodo(_ sender: UIBarButtonItem) {
-        checklist.append(ChecklistItem(txt: "WHIIIOOOOOOOOOOOOOOOAAAAA"))
-        tableView.beginUpdates()
-        tableView.insertRows(at: [IndexPath(row: checklist.count-1, section: 0)], with: .left)
-        tableView.endUpdates()
-    }*/
 }
 
 

@@ -13,7 +13,11 @@ class DataModel {
     private init() {
         self.list = [Checklist]()
         loadChecklist()
+        sortChecklists()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(DataModel.saveChecklist), name: .UIApplicationDidEnterBackground, object: nil)
     }
+    
     
     //MARK: variable
     var list: [Checklist]

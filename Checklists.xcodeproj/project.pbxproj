@@ -23,6 +23,7 @@
 		B8FDEF9F1E4C7D9300CB132F /* AllListViewController+ListDetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEF9E1E4C7D9300CB132F /* AllListViewController+ListDetailViewControllerDelegate.swift */; };
 		B8FDEFA11E4C827500CB132F /* ListDetailViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEFA01E4C827500CB132F /* ListDetailViewController+UITextFieldDelegate.swift */; };
 		B8FDEFA91E4CA44C00CB132F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEFA81E4CA44C00CB132F /* DataModel.swift */; };
+		B8FDEFAC1E4CC4A000CB132F /* DataModel+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEFAB1E4CC4A000CB132F /* DataModel+Sort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B8FDEF9E1E4C7D9300CB132F /* AllListViewController+ListDetailViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AllListViewController+ListDetailViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		B8FDEFA01E4C827500CB132F /* ListDetailViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListDetailViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		B8FDEFA81E4CA44C00CB132F /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		B8FDEFAB1E4CC4A000CB132F /* DataModel+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataModel+Sort.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +131,8 @@
 		B8FDEFA61E4C9C7E00CB132F /* Checklist */ = {
 			isa = PBXGroup;
 			children = (
-				B881377D1E432A4700A8E653 /* ChecklistViewController+DelageteDatasource.swift */,
 				B83774381E431E320035242C /* ChecklistViewController.swift */,
+				B881377D1E432A4700A8E653 /* ChecklistViewController+DelageteDatasource.swift */,
 			);
 			name = Checklist;
 			sourceTree = "<group>";
@@ -149,6 +151,7 @@
 			children = (
 				B8FDEFA81E4CA44C00CB132F /* DataModel.swift */,
 				B88137831E43870C00A8E653 /* DataModel+SaveLoad.swift */,
+				B8FDEFAB1E4CC4A000CB132F /* DataModel+Sort.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				B8FDEFA91E4CA44C00CB132F /* DataModel.swift in Sources */,
 				B83774391E431E320035242C /* ChecklistViewController.swift in Sources */,
 				B8FDEF991E4C5E2A00CB132F /* AllListViewControllerTableViewController.swift in Sources */,
+				B8FDEFAC1E4CC4A000CB132F /* DataModel+Sort.swift in Sources */,
 				B881377E1E432A4700A8E653 /* ChecklistViewController+DelageteDatasource.swift in Sources */,
 				B881377C1E43246000A8E653 /* ChecklistItem.swift in Sources */,
 				B83774371E431E320035242C /* AppDelegate.swift in Sources */,

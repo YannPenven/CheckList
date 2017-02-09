@@ -18,7 +18,7 @@ extension DataModel {
         return documentDirectory().appendingPathComponent("Checklist.plist")
     }
     
-    func saveChecklist(){
+    @objc func saveChecklist(){
         NSKeyedArchiver.archiveRootObject(self.list, toFile: dataFileUrl().path)
     }
     

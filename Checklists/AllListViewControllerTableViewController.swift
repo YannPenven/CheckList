@@ -10,7 +10,8 @@ import UIKit
 
 class AllListViewController: UITableViewController {
     
-    var list = [Checklist]()
+    //var list = [Checklist]()
+    var singleton = DataModel.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,12 @@ class AllListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.singleton.sortChecklists()
+        self.tableView.reloadData()
     }
     
     required init?(coder aDecoder: NSCoder){
@@ -38,14 +45,26 @@ class AllListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return DataModel.sharedInstance.list.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "checklistname", for: indexPath)
-        cell.textLabel?.text = list[indexPath.row].text
-
+        cell.textLabel?.text = singleton.list[indexPath.row].text
+        switch singleton.list[indexPath.row].uncheckedItemsCount {
+        case 0:
+            if singleton.list[indexPath.row].item.count != 0 {
+                cell.detailTextLabel?.text = "All Done!"
+            }else {
+                cell.detailTextLabel?.text = "No Item"
+            }
+        case let x where x <= singleton.list[indexPath.row].item.count:
+            cell.detailTextLabel?.text = String(x) + " Item"
+        default:
+            break
+        }
+        
         return cell
     }
     
@@ -95,7 +114,7 @@ class AllListViewController: UITableViewController {
             let cell = sender as? UITableViewCell,
             let row = self.tableView.indexPath(for: cell)?.row
         {
-            destination.checklist = self.list[row].item 
+            destination.list = singleton.list[row]
         }
         if segue.identifier == "editItem" || segue.identifier == "addItem",
             let navcontroller = segue.destination as? UINavigationController,
@@ -106,7 +125,7 @@ class AllListViewController: UITableViewController {
                 let cell = sender as? UITableViewCell ,
                 let indexPath = self.tableView.indexPath(for: cell)
             {
-                destination.itemToEdit = self.list[indexPath.row]
+                destination.itemToEdit = singleton.list[indexPath.row]
             }
         }
     }

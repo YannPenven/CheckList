@@ -11,10 +11,18 @@ import Foundation
 class Checklist: NSObject, NSCoding {
     
     var text: String
-    var item = [ChecklistItem]()
+    var item: [ChecklistItem]
+    var uncheckedItemsCount: Int {
+        get{
+            return item.filter { (selectedItem : ChecklistItem) -> Bool in
+                return !selectedItem.checked
+                }.count
+        }
+    }
     
     init(txt:String) {
         self.text = txt
+        item = [ChecklistItem]()
     }
     
     init(txt:String, item:[ChecklistItem]) {

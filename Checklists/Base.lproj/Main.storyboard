@@ -32,12 +32,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="checklistname" id="Rxb-xJ-fOs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="checklistname" textLabel="DBd-Pe-TNx" detailTextLabel="aQa-tp-OKg" style="IBUITableViewCellStyleSubtitle" id="Rxb-xJ-fOs">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rxb-xJ-fOs" id="hyh-eU-oRH">
                                     <frame key="frameInset" width="308" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DBd-Pe-TNx">
+                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aQa-tp-OKg">
+                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="f07-6X-SmT" kind="show" identifier="checklistdetail" id="Dtv-Mh-qIv"/>
@@ -272,7 +288,7 @@
                     <navigationItem key="navigationItem" title="Add List" id="6ci-ZK-vgZ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XL4-2R-ueV">
                             <connections>
-                                <action selector="cancel:" destination="kV9-Qu-V1w" id="ANV-s4-bfi"/>
+                                <action selector="cancel" destination="kV9-Qu-V1w" id="1Vp-IE-OAt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="prM-JO-9vg">
