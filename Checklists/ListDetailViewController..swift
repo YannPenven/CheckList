@@ -26,6 +26,7 @@ class ListDetailViewController: UITableViewController {
                 }
         }
     }
+    
     @IBAction func cancel() {
         if let controller = delegate {
             controller.ListDetailViewControllerDidCancel(controller: self)

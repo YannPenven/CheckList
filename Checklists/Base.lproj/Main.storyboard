@@ -277,13 +277,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="prM-JO-9vg">
                             <connections>
-                                <action selector="done:" destination="kV9-Qu-V1w" id="QD5-bT-l0c"/>
+                                <action selector="done" destination="kV9-Qu-V1w" id="jKD-w3-U0G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="doneButton" destination="prM-JO-9vg" id="WgO-Dk-uAD"/>
+                        <outlet property="doneButton" destination="prM-JO-9vg" id="Qcb-RM-IWW"/>
                         <outlet property="textfield" destination="vW0-f1-eUB" id="8Me-yq-YuA"/>
                     </connections>
                 </tableViewController>

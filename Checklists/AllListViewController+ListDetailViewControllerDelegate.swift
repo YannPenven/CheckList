@@ -16,13 +16,13 @@ extension AllListViewController: ListDetailViewControllerDelegate {
         controller.dismiss(animated: true, completion: {})
         self.list.append(item)
         self.tableView.insertRows(at: [IndexPath(row: list.count - 1, section: 0)], with: .left)
-        //saveChecklistItems()
+        //DataModel.sharedInstance.saveChecklist()
     }
     func ListDetailViewController(controller: ListDetailViewController, didFinishEditingItem item: Checklist){
         controller.dismiss(animated: true, completion: {})
         if let index = self.list.index(where:{ $0 === item }) {
             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .left)
-            //saveChecklistItems()
+            //DataModel.sharedInstance.saveChecklist()
         }
     }
 }

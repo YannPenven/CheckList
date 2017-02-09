@@ -8,23 +8,23 @@
 
 import UIKit
 
-extension ChecklistViewController {
+extension DataModel {
     func documentDirectory() -> URL {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0])
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
     
     func dataFileUrl() -> URL  {
-        return documentDirectory().appendingPathComponent("ChecklistItem.plist")
+        return documentDirectory().appendingPathComponent("Checklist.plist")
     }
     
-    func saveChecklistItems(){
-        NSKeyedArchiver.archiveRootObject(self.checklist, toFile: dataFileUrl().path)
+    func saveChecklist(){
+        NSKeyedArchiver.archiveRootObject(self.list, toFile: dataFileUrl().path)
     }
     
-    func loadChecklistItems(){
-        if let list = (NSKeyedUnarchiver.unarchiveObject(withFile: dataFileUrl().path) as? [ChecklistItem]){
-            self.checklist = list
+    func loadChecklist(){
+        if let list = (NSKeyedUnarchiver.unarchiveObject(withFile: dataFileUrl().path) as? [Checklist]){
+            self.list = list
         }
     }
 }

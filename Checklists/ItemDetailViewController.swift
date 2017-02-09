@@ -42,7 +42,7 @@ class ItemDetailViewController: UITableViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        if var item = itemToEdit {
+        if let item = itemToEdit {
             textField.text = item.text
         }else {
             self.doneButton.isEnabled = false

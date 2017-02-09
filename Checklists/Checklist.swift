@@ -24,11 +24,12 @@ class Checklist: NSObject, NSCoding {
     
     required convenience init?(coder decoder: NSCoder) {
         guard let text = decoder.decodeObject(forKey: "text") as? String,
-            let item = decoder.decodeObject(forKey: "checklist") as? ChecklistItem
+            let item = decoder.decodeObject(forKey: "checklist") as? [ChecklistItem]
             else { return nil }
         
         self.init(
-            txt: text
+            txt: text,
+            item: item
         )
     }
     

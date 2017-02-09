@@ -24,10 +24,11 @@ class AllListViewController: UITableViewController {
     
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
-        self.list.append(Checklist(txt: "List1", item: [ChecklistItem(txt: "hello"),ChecklistItem(txt: "hella"),ChecklistItem(txt: "hollo")]))
-        self.list.append(Checklist(txt: "List2", item: [ChecklistItem(txt: "swifty"),ChecklistItem(txt: "swifta"),ChecklistItem(txt: "swip")]))
-        self.list.append(Checklist(txt: "List3", item: [ChecklistItem(txt: "Banane"),ChecklistItem(txt: "Pomme"),ChecklistItem(txt: "Poire")]))
+        //self.list.append(Checklist(txt: "List1", item: [ChecklistItem(txt: "hello"),ChecklistItem(txt: "hella"),ChecklistItem(txt: "hollo")]))
+        //self.list.append(Checklist(txt: "List2", item: [ChecklistItem(txt: "swifty"),ChecklistItem(txt: "swifta"),ChecklistItem(txt: "swip")]))
+        //self.list.append(Checklist(txt: "List3", item: [ChecklistItem(txt: "Banane"),ChecklistItem(txt: "Pomme"),ChecklistItem(txt: "Poire")]))
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -94,7 +95,7 @@ class AllListViewController: UITableViewController {
             let cell = sender as? UITableViewCell,
             let row = self.tableView.indexPath(for: cell)?.row
         {
-            destination.list = self.list[row]
+            destination.checklist = self.list[row].item 
         }
         if segue.identifier == "editItem" || segue.identifier == "addItem",
             let navcontroller = segue.destination as? UINavigationController,

@@ -11,15 +11,11 @@ import UIKit
 class ChecklistViewController: UITableViewController {
     
     var checklist = [ChecklistItem]()
-    var list: Checklist!
+    //var list: Checklist?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let list = self.list {
-            self.title = list.text
-            self.checklist = list.item
-        }
         //loadChecklistItems()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -31,7 +27,7 @@ class ChecklistViewController: UITableViewController {
     
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
-        loadChecklistItems()
+        //loadChecklistItems()
     }
 
     //MARK:configure field in cell
