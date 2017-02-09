@@ -10,7 +10,7 @@ import UIKit
 
 class AllListViewController: UITableViewController {
     
-    var list = ["List1","List2","List3"]
+    var list = [Checklist]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,13 @@ class AllListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)
+        self.list.append(Checklist(txt: "List1", item: [ChecklistItem(txt: "hello"),ChecklistItem(txt: "hella"),ChecklistItem(txt: "hollo")]))
+        self.list.append(Checklist(txt: "List2", item: [ChecklistItem(txt: "swifty"),ChecklistItem(txt: "swifta"),ChecklistItem(txt: "swip")]))
+        self.list.append(Checklist(txt: "List3", item: [ChecklistItem(txt: "Banane"),ChecklistItem(txt: "Pomme"),ChecklistItem(txt: "Poire")]))
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +43,7 @@ class AllListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "checklistname", for: indexPath)
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = list[indexPath.row].text
 
         return cell
     }
@@ -77,14 +84,31 @@ class AllListViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier ==  "checklistdetail",
+            let destination = segue.destination as? ChecklistViewController,
+            let cell = sender as? UITableViewCell,
+            let row = self.tableView.indexPath(for: cell)?.row
+        {
+            destination.list = self.list[row]
+        }
+        if segue.identifier == "editItem" || segue.identifier == "addItem",
+            let navcontroller = segue.destination as? UINavigationController,
+            let destination = navcontroller.topViewController as? ListDetailViewController
+        {
+            destination.delegate = self
+            if segue.identifier == "editItem" ,
+                let cell = sender as? UITableViewCell ,
+                let indexPath = self.tableView.indexPath(for: cell)
+            {
+                destination.itemToEdit = self.list[indexPath.row]
+            }
+        }
     }
-    */
+    
 
 }
