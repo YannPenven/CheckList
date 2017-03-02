@@ -14,7 +14,7 @@ class ListDetailViewController: UITableViewController {
     @IBOutlet weak var textfield: UITextField!
     var delegate: ListDetailViewControllerDelegate?
     var itemToEdit:Checklist?
-    var iconName = "No Icon"
+    var iconName = ""
     
     @IBOutlet weak var imageName: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -23,7 +23,9 @@ class ListDetailViewController: UITableViewController {
             let txt = self.textfield.text {
                 if let item = itemToEdit {
                     item.text = txt
-                    item.iconName = iconName
+                    if(iconName != ""){
+                        item.iconName = iconName
+                    }
                     controller.ListDetailViewController(controller: self, didFinishEditingItem: item)
                 }else {
                     controller.ListDetailViewController(controller: self, didFinishAddingItem: Checklist(txt: txt, iconName: iconName))
