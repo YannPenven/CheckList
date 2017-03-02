@@ -12,18 +12,24 @@ class ItemDetailViewController: UITableViewController{
     
     var delegate:ItemDetailViewControllerDelegate?
     var itemToEdit:ChecklistItem?
+    var dueDate: Date = Date.init()
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet weak var remindSwitch: UISwitch!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     
     @IBAction func done() {
         if let controller = delegate {
             if let txt = self.textField.text {
                 if let item = itemToEdit {
                     item.text = txt
+                    item.dueDate = self.dueDate
+                    item.shouldRemind = remindSwitch.isOn
                     controller.itemDetailViewController(controller: self, didFinishEditingItem: item)
                 }else {
-                    controller.itemDetailViewController(controller: self, didFinishAddingItem: ChecklistItem(txt: txt))
+                    controller.itemDetailViewController(controller: self, didFinishAddingItem: ChecklistItem(txt: txt, checked: false, shouldRemind: self.remindSwitch.isOn, dueDate: self.dueDate))
                 }
             }
         }
@@ -43,9 +49,13 @@ class ItemDetailViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         if let item = itemToEdit {
-            textField.text = item.text
+            self.textField.text = item.text
+            self.remindSwitch.isOn = item.shouldRemind
+            self.dueDate = item.dueDate
+            self.dateLabel.text = item.dueDate.toString()
         }else {
             self.doneButton.isEnabled = false
+            dateLabel.text = dueDate.toString()
         }
         // Do any additional setup after loading the view, typically from a nib.
     }

@@ -17,11 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let standard = UserDefaults.standard
-        if !standard.bool(forKey: "FirstLaunch"){
-            standard.set(true, forKey: "FirstLaunch")
-            DataModel.sharedInstance.initOnFirstLaunch()
-        }
+        _ = Preferences.sharedInstance.firstLaunch
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             if granted {
