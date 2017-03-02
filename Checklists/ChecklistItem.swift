@@ -12,6 +12,11 @@ class ChecklistItem: NSObject, NSCoding {
     var text:String
     var checked:Bool
     
+    enum NSCodingKeys {
+        static let Text = "text"
+        static let Checked = "checked"
+    }
+    
     init(txt:String, checked:Bool) {
         self.text = txt
         self.checked = checked
@@ -23,12 +28,12 @@ class ChecklistItem: NSObject, NSCoding {
     }
     
     required convenience init?(coder decoder: NSCoder) {
-        guard let text = decoder.decodeObject(forKey: "text") as? String
+        guard let text = decoder.decodeObject(forKey: NSCodingKeys.Text) as? String
             else { return nil }
         
         self.init(
             txt: text,
-            checked: decoder.decodeBool(forKey: "checked")
+            checked: decoder.decodeBool(forKey: NSCodingKeys.Checked)
         )
     }
     
@@ -37,7 +42,7 @@ class ChecklistItem: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.text, forKey: "text")
-        aCoder.encode(self.checked, forKey: "checked")
+        aCoder.encode(self.text, forKey: NSCodingKeys.Text)
+        aCoder.encode(self.checked, forKey: NSCodingKeys.Checked)
     }
 }

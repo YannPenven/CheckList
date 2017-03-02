@@ -12,6 +12,7 @@ class Checklist: NSObject, NSCoding {
     
     var text: String
     var item: [ChecklistItem]
+    
     var uncheckedItemsCount: Int {
         get{
             return item.filter { (selectedItem : ChecklistItem) -> Bool in
@@ -20,6 +21,14 @@ class Checklist: NSObject, NSCoding {
         }
     }
     var iconName: String
+    
+    enum NSCodingKeys {
+        static let Text = "text"
+        static let Checklist = "checklist"
+        static let IconName = "iconName"
+    }
+    
+    //MARK: init method
     
     init(txt:String) {
         self.text = txt
@@ -39,10 +48,13 @@ class Checklist: NSObject, NSCoding {
         self.iconName = iconName
     }
     
+    
+    //MARK: Encode & Decode method
+    
     required convenience init?(coder decoder: NSCoder) {
-        guard let text = decoder.decodeObject(forKey: "text") as? String,
-            let item = decoder.decodeObject(forKey: "checklist") as? [ChecklistItem],
-            let iconName = decoder.decodeObject(forKey: "iconName") as? String
+        guard let text = decoder.decodeObject(forKey: NSCodingKeys.Text) as? String,
+            let item = decoder.decodeObject(forKey: NSCodingKeys.Checklist) as? [ChecklistItem],
+            let iconName = decoder.decodeObject(forKey: NSCodingKeys.IconName) as? String
             else { return nil }
         
         self.init(
@@ -54,9 +66,9 @@ class Checklist: NSObject, NSCoding {
     
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.text, forKey: "text")
-        aCoder.encode(self.item, forKey: "checklist")
-        aCoder.encode(self.iconName, forKey: "iconName")
+        aCoder.encode(self.text, forKey: NSCodingKeys.Text)
+        aCoder.encode(self.item, forKey: NSCodingKeys.Checklist)
+        aCoder.encode(self.iconName, forKey: NSCodingKeys.IconName)
     }
 
 }
