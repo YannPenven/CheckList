@@ -21,6 +21,7 @@
 		B8C8ACBD1E68154A007F2507 /* IconPickerViewController+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8ACBC1E68154A007F2507 /* IconPickerViewController+Protocol.swift */; };
 		B8C8ACBF1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8ACBE1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift */; };
 		B8C8ACC11E6850FE007F2507 /* DataModel+UserPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8ACC01E6850FE007F2507 /* DataModel+UserPref.swift */; };
+		B8C8ACC41E685539007F2507 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C8ACC31E685539007F2507 /* UserNotifications.framework */; };
 		B8FDEF991E4C5E2A00CB132F /* AllListViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEF981E4C5E2A00CB132F /* AllListViewControllerTableViewController.swift */; };
 		B8FDEF9B1E4C646800CB132F /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEF9A1E4C646800CB132F /* Checklist.swift */; };
 		B8FDEF9D1E4C6CF700CB132F /* ListDetailViewController..swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEF9C1E4C6CF700CB132F /* ListDetailViewController..swift */; };
@@ -47,6 +48,7 @@
 		B8C8ACBC1E68154A007F2507 /* IconPickerViewController+Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IconPickerViewController+Protocol.swift"; sourceTree = "<group>"; };
 		B8C8ACBE1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListDetailViewController+IconPickerDelegate.swift"; sourceTree = "<group>"; };
 		B8C8ACC01E6850FE007F2507 /* DataModel+UserPref.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataModel+UserPref.swift"; sourceTree = "<group>"; };
+		B8C8ACC31E685539007F2507 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B8FDEF981E4C5E2A00CB132F /* AllListViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		B8FDEF9A1E4C646800CB132F /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		B8FDEF9C1E4C6CF700CB132F /* ListDetailViewController..swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController..swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C8ACC41E685539007F2507 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +75,7 @@
 			children = (
 				B83774351E431E320035242C /* Checklists */,
 				B83774341E431E320035242C /* Products */,
+				B8C8ACC21E685539007F2507 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +108,14 @@
 				B8C8ACBC1E68154A007F2507 /* IconPickerViewController+Protocol.swift */,
 			);
 			name = IconPicker;
+			sourceTree = "<group>";
+		};
+		B8C8ACC21E685539007F2507 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8C8ACC31E685539007F2507 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B8FDEFA21E4C830E00CB132F /* ListDetail */ = {

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -20,6 +21,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !standard.bool(forKey: "FirstLaunch"){
             standard.set(true, forKey: "FirstLaunch")
             DataModel.sharedInstance.initOnFirstLaunch()
+        }
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if granted {
+                let notification = UNMutableNotificationContent()
+                notification.title = "TITLE"
+                notification.body = "THE MOST BEAUTIFUL AND EXTROARDINARY, MYSTICAL AND MAGICAL NOTIFICATION YOU'VE EVER SEEN"
+                
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
+                let request = UNNotificationRequest(identifier: "SampleRequest", content: notification, trigger: trigger)
+                
+                UNUserNotificationCenter.current().delegate = self
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: {(error) in })
+            }
         }
         return true
     }
