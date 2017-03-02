@@ -34,7 +34,8 @@ class ChecklistViewController: UITableViewController {
 
     //MARK:configure field in cell
     func configureCheckmarkFor(cell: UITableViewCell, withItem item: ChecklistItem){
-        if let checkmark = cell.viewWithTag(1) {
+        if let checkmark = cell.viewWithTag(1) as? UILabel {
+            checkmark.textColor = view.tintColor
             if item.checked {
                 checkmark.isHidden = false
             }else{

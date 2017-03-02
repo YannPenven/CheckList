@@ -46,6 +46,7 @@ class ListDetailViewController: UITableViewController {
             textfield.text = item.text
             imageView.image = UIImage(named: item.iconName)
         }else {
+            self.imageView.image = #imageLiteral(resourceName: "Folder")
             self.doneButton.isEnabled = false
         }
 

@@ -387,4 +387,5 @@
         <segue reference="ogh-5P-90Y"/>
         <segue reference="cRg-lg-VKZ"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.30376286155712728" green="0.61985913215077715" blue="0.51493869911651147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
