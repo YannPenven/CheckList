@@ -52,6 +52,7 @@ class AllListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "checklistname", for: indexPath)
         cell.textLabel?.text = singleton.list[indexPath.row].text
+        cell.imageView?.image = UIImage(named:singleton.list[indexPath.row].iconName)
         switch singleton.list[indexPath.row].uncheckedItemsCount {
         case 0:
             if singleton.list[indexPath.row].item.count != 0 {

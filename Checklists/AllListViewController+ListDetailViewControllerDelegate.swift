@@ -23,6 +23,8 @@ extension AllListViewController: ListDetailViewControllerDelegate {
         if let index = DataModel.sharedInstance.list.index(where:{ $0 === item }) {
             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .left)
             //DataModel.sharedInstance.saveChecklist()
+        }else {
+            self.tableView.reloadData()
         }
     }
 }

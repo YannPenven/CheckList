@@ -17,6 +17,9 @@
 		B88137801E433F9900A8E653 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881377F1E433F9900A8E653 /* ItemDetailViewController.swift */; };
 		B88137821E4349FA00A8E653 /* ItemDetailViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88137811E4349FA00A8E653 /* ItemDetailViewController+Delegate.swift */; };
 		B88137841E43870C00A8E653 /* DataModel+SaveLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88137831E43870C00A8E653 /* DataModel+SaveLoad.swift */; };
+		B8C8ACB61E681003007F2507 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8ACB51E681003007F2507 /* IconPickerViewController.swift */; };
+		B8C8ACBD1E68154A007F2507 /* IconPickerViewController+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8ACBC1E68154A007F2507 /* IconPickerViewController+Protocol.swift */; };
+		B8C8ACBF1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8ACBE1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift */; };
 		B8FDEF991E4C5E2A00CB132F /* AllListViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEF981E4C5E2A00CB132F /* AllListViewControllerTableViewController.swift */; };
 		B8FDEF9B1E4C646800CB132F /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEF9A1E4C646800CB132F /* Checklist.swift */; };
 		B8FDEF9D1E4C6CF700CB132F /* ListDetailViewController..swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDEF9C1E4C6CF700CB132F /* ListDetailViewController..swift */; };
@@ -39,6 +42,9 @@
 		B881377F1E433F9900A8E653 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ItemDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B88137811E4349FA00A8E653 /* ItemDetailViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "ItemDetailViewController+Delegate.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B88137831E43870C00A8E653 /* DataModel+SaveLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataModel+SaveLoad.swift"; sourceTree = "<group>"; };
+		B8C8ACB51E681003007F2507 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
+		B8C8ACBC1E68154A007F2507 /* IconPickerViewController+Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IconPickerViewController+Protocol.swift"; sourceTree = "<group>"; };
+		B8C8ACBE1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListDetailViewController+IconPickerDelegate.swift"; sourceTree = "<group>"; };
 		B8FDEF981E4C5E2A00CB132F /* AllListViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		B8FDEF9A1E4C646800CB132F /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		B8FDEF9C1E4C6CF700CB132F /* ListDetailViewController..swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController..swift; sourceTree = "<group>"; };
@@ -89,11 +95,21 @@
 			path = Checklists;
 			sourceTree = "<group>";
 		};
+		B8C8ACB71E6810CB007F2507 /* IconPicker */ = {
+			isa = PBXGroup;
+			children = (
+				B8C8ACB51E681003007F2507 /* IconPickerViewController.swift */,
+				B8C8ACBC1E68154A007F2507 /* IconPickerViewController+Protocol.swift */,
+			);
+			name = IconPicker;
+			sourceTree = "<group>";
+		};
 		B8FDEFA21E4C830E00CB132F /* ListDetail */ = {
 			isa = PBXGroup;
 			children = (
 				B8FDEF9C1E4C6CF700CB132F /* ListDetailViewController..swift */,
 				B8FDEFA01E4C827500CB132F /* ListDetailViewController+UITextFieldDelegate.swift */,
+				B8C8ACBE1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift */,
 			);
 			name = ListDetail;
 			sourceTree = "<group>";
@@ -101,6 +117,7 @@
 		B8FDEFA31E4C834A00CB132F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B8C8ACB71E6810CB007F2507 /* IconPicker */,
 				B8FDEFAA1E4CA51200CB132F /* Data */,
 				B8FDEFA71E4CA0BE00CB132F /* AllList */,
 				B8FDEFA61E4C9C7E00CB132F /* Checklist */,
@@ -231,13 +248,16 @@
 				B88137841E43870C00A8E653 /* DataModel+SaveLoad.swift in Sources */,
 				B88137821E4349FA00A8E653 /* ItemDetailViewController+Delegate.swift in Sources */,
 				B8FDEF9B1E4C646800CB132F /* Checklist.swift in Sources */,
+				B8C8ACB61E681003007F2507 /* IconPickerViewController.swift in Sources */,
 				B8FDEFA11E4C827500CB132F /* ListDetailViewController+UITextFieldDelegate.swift in Sources */,
+				B8C8ACBD1E68154A007F2507 /* IconPickerViewController+Protocol.swift in Sources */,
 				B88137801E433F9900A8E653 /* ItemDetailViewController.swift in Sources */,
 				B8FDEF9D1E4C6CF700CB132F /* ListDetailViewController..swift in Sources */,
 				B8FDEFA91E4CA44C00CB132F /* DataModel.swift in Sources */,
 				B83774391E431E320035242C /* ChecklistViewController.swift in Sources */,
 				B8FDEF991E4C5E2A00CB132F /* AllListViewControllerTableViewController.swift in Sources */,
 				B8FDEFAC1E4CC4A000CB132F /* DataModel+Sort.swift in Sources */,
+				B8C8ACBF1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift in Sources */,
 				B881377E1E432A4700A8E653 /* ChecklistViewController+DelageteDatasource.swift in Sources */,
 				B881377C1E43246000A8E653 /* ChecklistItem.swift in Sources */,
 				B83774371E431E320035242C /* AppDelegate.swift in Sources */,
