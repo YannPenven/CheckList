@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import UserNotifications
 
-class ItemDetailViewController: UITableViewController{
+class ItemDetailViewController: UITableViewController, UNUserNotificationCenterDelegate{
     
     var delegate:ItemDetailViewControllerDelegate?
     var itemToEdit:ChecklistItem?
@@ -27,12 +28,26 @@ class ItemDetailViewController: UITableViewController{
         if let controller = delegate {
             if let txt = self.textField.text {
                 if let item = itemToEdit {
+                    deleteNotification(title: item.text)
                     item.text = txt
                     item.dueDate = self.dueDate
                     item.shouldRemind = remindSwitch.isOn
-                    controller.itemDetailViewController(controller: self, didFinishEditingItem: item)
+                    if remindSwitch.isOn {
+                        if buildNotfication(title: txt, timeInterval: self.dueDate.timeIntervalSince(Date.init())) {
+                            controller.itemDetailViewController(controller: self, didFinishEditingItem: item)
+                        }
+                    }else {
+                        controller.itemDetailViewController(controller: self, didFinishEditingItem: item)
+                    }
                 }else {
-                    controller.itemDetailViewController(controller: self, didFinishAddingItem: ChecklistItem(txt: txt, checked: false, shouldRemind: self.remindSwitch.isOn, dueDate: self.dueDate))
+                    if remindSwitch.isOn {
+                        if buildNotfication(title: txt, timeInterval: self.dueDate.timeIntervalSince(Date.init())) {
+                            controller.itemDetailViewController(controller: self, didFinishAddingItem: ChecklistItem(txt: txt, checked: false, shouldRemind: self.remindSwitch.isOn, dueDate: self.dueDate))
+                        }
+                    }else {
+                        controller.itemDetailViewController(controller: self, didFinishAddingItem: ChecklistItem(txt: txt, checked: false, shouldRemind: self.remindSwitch.isOn, dueDate: self.dueDate))
+                    }
+                    
                 }
             }
         }
@@ -68,7 +83,30 @@ class ItemDetailViewController: UITableViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    func buildNotfication(title: String, timeInterval: TimeInterval) -> Bool{
+        var notificationHasBeenCreated = false
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if granted {
+                let notification = UNMutableNotificationContent()
+                notification.title = title
+                notification.body = "Little Reminder you need to do something today \\o/"
+                
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+                let request = UNNotificationRequest(identifier: "ReminderNotification:" + title, content: notification, trigger: trigger)
+                
+                UNUserNotificationCenter.current().delegate = self
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: {(error) in })
+                notificationHasBeenCreated = true
+            }
+        }
+        return notificationHasBeenCreated
+    }
     
+    func deleteNotification(title: String){
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: ["ReminderNotification:" + title])
+    }
 }
 
 //MARK:Protocole
