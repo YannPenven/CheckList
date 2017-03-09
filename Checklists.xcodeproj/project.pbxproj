@@ -17,6 +17,8 @@
 		B88137801E433F9900A8E653 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881377F1E433F9900A8E653 /* ItemDetailViewController.swift */; };
 		B88137821E4349FA00A8E653 /* ItemDetailViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88137811E4349FA00A8E653 /* ItemDetailViewController+Delegate.swift */; };
 		B88137841E43870C00A8E653 /* DataModel+SaveLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88137831E43870C00A8E653 /* DataModel+SaveLoad.swift */; };
+		B8BD15F91E7149E4000C8E74 /* ItemDetailViewController+DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BD15F81E7149E4000C8E74 /* ItemDetailViewController+DatePicker.swift */; };
+		B8BD15FB1E714C5F000C8E74 /* ItemDetailsViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BD15FA1E714C5F000C8E74 /* ItemDetailsViewController+TableViewDelegate.swift */; };
 		B8C8ACB61E681003007F2507 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8ACB51E681003007F2507 /* IconPickerViewController.swift */; };
 		B8C8ACBD1E68154A007F2507 /* IconPickerViewController+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8ACBC1E68154A007F2507 /* IconPickerViewController+Protocol.swift */; };
 		B8C8ACBF1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8ACBE1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift */; };
@@ -46,6 +48,8 @@
 		B881377F1E433F9900A8E653 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ItemDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B88137811E4349FA00A8E653 /* ItemDetailViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "ItemDetailViewController+Delegate.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B88137831E43870C00A8E653 /* DataModel+SaveLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataModel+SaveLoad.swift"; sourceTree = "<group>"; };
+		B8BD15F81E7149E4000C8E74 /* ItemDetailViewController+DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemDetailViewController+DatePicker.swift"; sourceTree = "<group>"; };
+		B8BD15FA1E714C5F000C8E74 /* ItemDetailsViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemDetailsViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		B8C8ACB51E681003007F2507 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		B8C8ACBC1E68154A007F2507 /* IconPickerViewController+Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IconPickerViewController+Protocol.swift"; sourceTree = "<group>"; };
 		B8C8ACBE1E6815CC007F2507 /* ListDetailViewController+IconPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListDetailViewController+IconPickerDelegate.swift"; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 			children = (
 				B881377F1E433F9900A8E653 /* ItemDetailViewController.swift */,
 				B88137811E4349FA00A8E653 /* ItemDetailViewController+Delegate.swift */,
+				B8BD15F81E7149E4000C8E74 /* ItemDetailViewController+DatePicker.swift */,
+				B8BD15FA1E714C5F000C8E74 /* ItemDetailsViewController+TableViewDelegate.swift */,
 			);
 			name = ItemDetail;
 			sourceTree = "<group>";
@@ -288,8 +294,10 @@
 				B8FDEF9B1E4C646800CB132F /* Checklist.swift in Sources */,
 				B8C8ACB61E681003007F2507 /* IconPickerViewController.swift in Sources */,
 				B8FDEFA11E4C827500CB132F /* ListDetailViewController+UITextFieldDelegate.swift in Sources */,
+				B8BD15F91E7149E4000C8E74 /* ItemDetailViewController+DatePicker.swift in Sources */,
 				B8C8ACBD1E68154A007F2507 /* IconPickerViewController+Protocol.swift in Sources */,
 				B88137801E433F9900A8E653 /* ItemDetailViewController.swift in Sources */,
+				B8BD15FB1E714C5F000C8E74 /* ItemDetailsViewController+TableViewDelegate.swift in Sources */,
 				B8FDEF9D1E4C6CF700CB132F /* ListDetailViewController..swift in Sources */,
 				B8FDEFA91E4CA44C00CB132F /* DataModel.swift in Sources */,
 				B83774391E431E320035242C /* ChecklistViewController.swift in Sources */,

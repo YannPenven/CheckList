@@ -9,6 +9,14 @@
 import UIKit
 
 extension ItemDetailViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if self.datePickerVisible {
+            self.hideDatePicker()
+        }
+    }
+    
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let str = textField.text?.characters {
             if !string.isEmpty || (str.count) > 1 {

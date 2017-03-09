@@ -13,11 +13,14 @@ class ItemDetailViewController: UITableViewController{
     var delegate:ItemDetailViewControllerDelegate?
     var itemToEdit:ChecklistItem?
     var dueDate: Date = Date.init()
+    var datePickerVisible = false
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var remindSwitch: UISwitch!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var datePickerCell: UITableViewCell!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     
     @IBAction func done() {

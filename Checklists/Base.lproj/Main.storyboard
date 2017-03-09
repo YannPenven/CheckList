@@ -186,7 +186,7 @@
                                         <rect key="frame" x="0.0" y="179" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dbp-jp-pkx" id="9Ae-lU-2yt">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odr-2b-VsV">
@@ -205,7 +205,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="cB5-Yt-5E4" detailTextLabel="gKG-10-Egj" style="IBUITableViewCellStyleValue1" id="aM5-5f-QNy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="dueDateCell" textLabel="cB5-Yt-5E4" detailTextLabel="gKG-10-Egj" style="IBUITableViewCellStyleValue1" id="aM5-5f-QNy">
                                         <rect key="frame" x="0.0" y="223" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aM5-5f-QNy" id="aBi-Wx-V1i">
@@ -253,12 +253,41 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dateLabel" destination="gKG-10-Egj" id="k54-mx-H1l"/>
+                        <outlet property="datePicker" destination="73l-q1-nEc" id="snq-Ki-jgK"/>
+                        <outlet property="datePickerCell" destination="cgw-yc-ZhS" id="3Js-Vy-cLX"/>
                         <outlet property="doneButton" destination="pHq-v7-snJ" id="LjB-tz-4DV"/>
                         <outlet property="remindSwitch" destination="wqs-z7-1KA" id="vBY-Yy-Gws"/>
                         <outlet property="textField" destination="4y5-Yz-qoc" id="YwW-Mx-rnD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzt-BU-AeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="206" id="cgw-yc-ZhS">
+                    <rect key="frame" x="0.0" y="0.0" width="374" height="206"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cgw-yc-ZhS" id="koY-0h-uwn">
+                        <frame key="frameInset" width="374" height="206"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="73l-q1-nEc">
+                                <frame key="frameInset" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="510741479.60583901">
+                                    <!--2017-03-09 08:37:59 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateChanged:" destination="1oK-6m-fTy" eventType="valueChanged" id="zPg-rH-8Mk"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="73l-q1-nEc" firstAttribute="top" secondItem="koY-0h-uwn" secondAttribute="topMargin" id="2Y3-kg-h3U"/>
+                            <constraint firstItem="73l-q1-nEc" firstAttribute="leading" secondItem="koY-0h-uwn" secondAttribute="leadingMargin" id="b4X-eQ-EdQ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="73l-q1-nEc" secondAttribute="bottom" id="cYQ-Yt-KmG"/>
+                            <constraint firstItem="73l-q1-nEc" firstAttribute="centerX" secondItem="koY-0h-uwn" secondAttribute="centerX" id="gtv-1m-rYx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="73l-q1-nEc" secondAttribute="trailing" id="xRx-CH-Fgy"/>
+                            <constraint firstItem="73l-q1-nEc" firstAttribute="centerY" secondItem="koY-0h-uwn" secondAttribute="centerY" id="ye8-1l-bu2"/>
+                        </constraints>
+                    </tableViewCellContentView>
+                </tableViewCell>
             </objects>
             <point key="canvasLocation" x="1700" y="-36"/>
         </scene>
@@ -337,7 +366,7 @@
                                         <rect key="frame" x="0.0" y="179" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U5M-Vn-X32" id="JoC-ee-WBx">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fEt-zp-Ycm">
