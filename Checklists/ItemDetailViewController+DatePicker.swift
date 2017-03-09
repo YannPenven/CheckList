@@ -21,6 +21,7 @@ extension ItemDetailViewController {
     }
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         self.dateLabel.text = sender.date.toString()
+        self.dueDate = sender.date
     }
     
 }

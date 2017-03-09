@@ -26,6 +26,7 @@ class ItemDetailViewController: UITableViewController, UNUserNotificationCenterD
     
     @IBAction func done() {
         if let controller = delegate {
+            let tmp = self.dueDate.timeIntervalSince(Date.init())
             if let txt = self.textField.text {
                 if let item = itemToEdit {
                     deleteNotification(title: item.text)
